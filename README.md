@@ -1,2 +1,2 @@
 # Blender Rigging Stuff
-Some not formalized at all scripts and add-ons for improvement of rigging (and not only) pipeline
+A bunch of unqualified scripts and add-ons for rigging and animtaion process improvements
