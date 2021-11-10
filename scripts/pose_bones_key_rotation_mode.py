@@ -28,7 +28,7 @@ def pose_bone_rot_order_keys(bone_name):
         ob.animation_data.action = action
         fcurve_rot_mode = action.fcurves.new(data_path = rot_mode_path, index = 0, action_group = bone_name)
         kf_rot_mode = fcurve_rot_mode.keyframe_points.insert(frame = frame_c, value=rot_mode_value)
-        kf_rot_mode.interpolation = "LINEAR"
+        kf_rot_mode.interpolation = "CONSTANT"
          
     else: # action exists; search for relevant fcurves, create it if none found
         for curve in ob.animation_data.action.fcurves:
@@ -36,12 +36,12 @@ def pose_bone_rot_order_keys(bone_name):
         if rot_mode_path not in l:
             fcurve_rot_mode = ob.animation_data.action.fcurves.new(data_path = rot_mode_path, index = 0, action_group = bone_name)
             kf_rot_mode = fcurve_rot_mode.keyframe_points.insert(frame = frame_c, value=rot_mode_value)
-            kf_rot_mode.interpolation = "LINEAR"
+            kf_rot_mode.interpolation = "CONSTANT"
         else:
             for curve in ob.animation_data.action.fcurves:
                 if rot_mode_path in curve.data_path:
                     kf_rot_mode = curve.keyframe_points.insert(frame = frame_c, value=rot_mode_value)
-                    kf_rot_mode.interpolation = "LINEAR"
+                    kf_rot_mode.interpolation = "CONSTANT"
                     
 for bone in bpy.context.selected_pose_bones:
     pose_bone_rot_order_keys(bone.name)
