@@ -19,6 +19,8 @@ def pose_bone_rot_order_keys(bone_name):
     rot_mode_path = 'pose.bones["' + bone_name + '"].rotation_mode'
     rot_mode_value = rot_mode_dict[bone.rotation_mode]
     
+    if not ob.animation_data:
+        ob.animation_data_create()
             
             
     if ob.animation_data.action == None: # no active action, create one
