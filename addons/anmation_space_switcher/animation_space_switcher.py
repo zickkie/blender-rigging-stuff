@@ -1,6 +1,6 @@
 bl_info = {
     "name": "Space Switcher",
-    "author": "Arthur Shapiro",
+    "author": "Arthur Shapiro, Stanislav Ovcharov",
     "version": (1, 0),
     "blender": (2, 93, 0),
     "location": "View3D > N-panel",
