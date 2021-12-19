@@ -6,7 +6,7 @@ bl_info = {
     "location": "View3D > N-panel",
     "description": "Switch Loc/Rot/Scale Space of the Selected Pose Bones seamlessly" ,
     "warning": "",
-    "doc_url": "",
+    "doc_url": "https://github.com/zickkie/blender-rigging-stuff/tree/main/addons/anmation_space_switcher",
     "category": "Animation",
 }
 
