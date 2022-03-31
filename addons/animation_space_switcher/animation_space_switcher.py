@@ -1,12 +1,12 @@
 bl_info = {
     "name": "Space Switcher",
-    "author": "Arthur Shapiro, Stanislav Ovcharov",
+    "author": "Arthur Shapiro",
     "version": (1, 0),
     "blender": (2, 93, 0),
     "location": "View3D > N-panel",
     "description": "Switch Loc/Rot/Scale Space of the Selected Pose Bones seamlessly" ,
     "warning": "",
-    "doc_url": "https://github.com/zickkie/blender-rigging-stuff/tree/main/addons/animation_space_switcher",
+    "doc_url": "",
     "category": "Animation",
 }
 
@@ -77,6 +77,7 @@ class SS_OT_bake_to_empties(Operator):
             
             empty = bpy.data.objects.new(name, None)
             empty.empty_display_type = 'CUBE'
+            empty.empty_display_size = context.scene.space_switcher_empties_size
             empty.show_in_front = True
             coll.objects.link(empty)
             empty["bone"] = (bone.name + "_" + str(rand))
@@ -397,6 +398,10 @@ class VIEW3D_PT_space_switcher_panel(Panel):
         
 
         row = col.row()
+        row.prop(scene, "space_switcher_empties_size", text = "New Empties Size")
+        row = col.row()
+        
+        row = col.row()
         bte = row.operator(SS_OT_bake_to_empties.bl_idname, text = 'Bake to Empties', icon = "OUTLINER_OB_EMPTY")
         bte.bake_loc = context.scene.space_switcher_bake_loc
         bte.bake_rot = context.scene.space_switcher_bake_rot
@@ -532,6 +537,14 @@ def register():
         description = "Frame End"
     )
 
+    bpy.types.Scene.space_switcher_empties_size = bpy.props.FloatProperty(
+        name = "Empties Size",
+        default = 1.0,
+        min = 0.01,
+        max = 100,
+        description = "Sizes of the newly created Empties"
+    )
+
     _register()
     
 def unregister():
@@ -547,6 +560,7 @@ def unregister():
     del bpy.types.Scene.space_switcher_bake_scale
     del bpy.types.Scene.space_switcher_frame_start
     del bpy.types.Scene.space_switcher_frame_end
+    del bpy.types.Scene.space_switcher_empties_size
 
 
 if __name__ == "__main__":
