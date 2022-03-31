@@ -66,3 +66,9 @@ Create New Action after Baking instead of overwriting the existing
 1. When baking Scale, be awared that scale inherited with Share cannot be in any way represented by Transforms (as Transforms channels are stored separately).
 That is why you may have a visual difference between "parented" Scale and Baked Scale in Animation.
 2. Unfortunately classic Baking option in Blender doesn't provide with options to Bake only certain channels (e.g. only Loc, Rot or Scale). So if you need to tweak for example only Location it is a good idea to Bake everything to a new Action and then just copy-paste only those keys that are needed for your current Animation.
+
+##
+
+#### Update 31/03/2022:
+As sometimes the default size of the created Empties can be far from what you find handy in terms of your current rig/scene you now can set the desired size of such Empties with the correspondive slider up to the "Bake to Empties" button:
+![image](https://user-images.githubusercontent.com/59086089/160992640-e29c2d01-0016-4012-8602-2e5db2d4e700.png)
