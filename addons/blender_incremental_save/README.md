@@ -3,7 +3,7 @@
 **Incremental Save** gives you the ability of quick and simple create the new version of your file based on its naming.
 It splits the file name by digits and letters parts and adds the necessary number to the last digits part so that your new file name won't overwrite the other versions.
 
-After being installed this add-on ads the Incremental Save operator to the top of the File Menu.
+After being installed this add-on ads the **Incremental Save** operator to the top of the File Menu.
 You can click it there or add the shortcut.
 ![image](https://user-images.githubusercontent.com/59086089/172042842-cda8d2d9-8c49-4eb4-8659-e8f884e83043.png)
 
