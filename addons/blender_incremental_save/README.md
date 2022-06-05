@@ -7,7 +7,7 @@ It splits the file name by digits and letters parts and adds the necessary numbe
 ## Examples of the Incremental Save naming convention:
 - file is not saved -> **file is saved under the deisired name in a desired folder**
 - untitled.blend -> **untitled1.blend** (if you don't have numvers at all then the add-on will add 1 (or any bigger number for not matching the exisiting ones) just to start with something)
-- scene1.blend -> scene2.blend
+- scene1.blend -> **scene2.blend**
 - scene000.blend -> **scene001.blend**
 - file_v09.blend -> **file_v10.blend**
 - file0099.blend -> **file0100.blend**
