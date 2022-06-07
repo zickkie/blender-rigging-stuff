@@ -2,7 +2,7 @@ bl_info = {
     "name": "Blender Incremental Save",
     "author": "Arthur Shapiro",
     "version": (1, 0, 0),
-    "blender": (3, 0, 0),
+    "blender": (3, 1, 0),
     "location": "File menu",
     "warning": "",
     "description": "Incremental Save: adds 1 to the last digital part of the current File Name",
@@ -120,3 +120,5 @@ def unregister():
     bpy.utils.unregister_class(BIS_OT_incremental_save)
     bpy.types.TOPBAR_MT_file.remove(bis_menu)
 
+if __name__ == "__main__":
+    register()
