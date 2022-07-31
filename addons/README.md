@@ -1,2 +1,0 @@
-# Stack Visible FCurves
-
